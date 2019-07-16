@@ -32,6 +32,34 @@
         <artifactId>spark-streaming_2.11</artifactId>
         <version>${spark.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka -->
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-streaming-kafka_2.11</artifactId>
+        <version>1.6.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>0.10.2.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+        <version>2.6.2</version>
+    </dependency>
+
+
+    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.apache.commons</groupId>-->
+<!--        <artifactId>commons-pool2</artifactId>-->
+<!--        <version>2.5.0</version>-->
+<!--    </dependency>-->
+
+
 
     <!--        <dependency>-->
     <!--            <groupId>org.apache.spark</groupId>-->
