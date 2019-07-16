@@ -8,7 +8,7 @@ import org.apache.spark.streaming.receiver.Receiver
 
 class CustomerReceiver(host: String, port: Int) extends Receiver[String](StorageLevel.MEMORY_ONLY) {
   /**
-    * 自定义接收器
+    * 自定义接收器,无状态的转换
     */
   //接收器启动时调用
   override def onStart(): Unit = {
