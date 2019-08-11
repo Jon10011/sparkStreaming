@@ -5,6 +5,8 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object WordCoundType2 {
   def main(args: Array[String]): Unit = {
+
+    val Array(logInputPath, compressionCode,resultOutputPath) = args
     //conf
     val conf = new SparkConf().setAppName("wc").setMaster("local[*]")
 
