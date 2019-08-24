@@ -1,9 +1,8 @@
-package com.songdong.test
+package com.songdong.streaming.test
 
 import java.sql.DriverManager
 
 import org.apache.spark.SparkConf
-import org.apache.spark.deploy.DeployMessages.DriverStateChanged
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object testStreaming {

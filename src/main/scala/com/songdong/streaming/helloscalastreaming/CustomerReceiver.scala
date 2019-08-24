@@ -1,4 +1,4 @@
-package com.songdong.helloscalastreaming
+package com.songdong.streaming.helloscalastreaming
 
 import java.io.{BufferedReader, InputStreamReader}
 import java.net.Socket

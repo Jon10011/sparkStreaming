@@ -1,12 +1,10 @@
-package com.songdong.helloscalastreaming
+package com.songdong.streaming.helloscalastreaming
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-object WordCoundType2 {
+object WordCound {
   def main(args: Array[String]): Unit = {
-
-    val Array(logInputPath, compressionCode,resultOutputPath) = args
     //conf
     val conf = new SparkConf().setAppName("wc").setMaster("local[*]")
 
@@ -30,13 +28,13 @@ object WordCoundType2 {
     //    val result = k2vDStream.reduceByKey(_+_)
 
     //保存上次的状态信息--》有状态的转换
-    //    val updateFuc = (v: Seq[Int], state: Option[Int]) => {
-    //
-    //      val preStatus = state.getOrElse(0)
-    //      Some(preStatus + v.sum)
-    //    }
-    //    val result = k2vDStream.updateStateByKey(updateFuc)
-    val result = k2vDStream.reduceByKeyAndWindow((x: Int, y: Int) => x + y,Seconds(15),Seconds(10))
+    val updateFuc = (v: Seq[Int], state: Option[Int]) => {
+
+      val preStatus = state.getOrElse(0)
+      Some(preStatus + v.sum)
+    }
+    val result = k2vDStream.updateStateByKey(updateFuc)
+
 
     result.print()
 

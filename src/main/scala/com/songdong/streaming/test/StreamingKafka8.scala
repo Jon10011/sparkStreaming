@@ -1,4 +1,4 @@
-package com.songdong.test
+package com.songdong.streaming.test
 
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf

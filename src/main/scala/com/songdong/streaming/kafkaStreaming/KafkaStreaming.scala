@@ -1,4 +1,4 @@
-package com.songdong.kafkaStreaming
+package com.songdong.streaming.kafkaStreaming
 
 import kafka.serializer.StringDecoder
 import org.apache.kafka.clients.consumer.ConsumerConfig

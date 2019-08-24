@@ -1,4 +1,4 @@
-package com.songdong.kafkaStreaming
+package com.songdong.streaming.kafkaStreaming
 
 import java.util.Properties
 
