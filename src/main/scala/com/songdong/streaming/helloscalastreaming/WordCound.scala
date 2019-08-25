@@ -27,7 +27,7 @@ object WordCound {
     //DStream[(String,sum)]
     //    val result = k2vDStream.reduceByKey(_+_)
 
-    //保存上次的状态信息--》有状态的转换
+    //保存上次的状态信息->有状态的转换
     val updateFuc = (v: Seq[Int], state: Option[Int]) => {
 
       val preStatus = state.getOrElse(0)
