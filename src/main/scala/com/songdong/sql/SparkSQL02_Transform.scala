@@ -24,6 +24,7 @@ object SparkSQL02_Transform {
     //RDD转换DF
     val df: DataFrame = rdd.toDF("id", "name", "age")
 
+
     //DF转换DS
     val ds: Dataset[User] = df.as[User]
 
