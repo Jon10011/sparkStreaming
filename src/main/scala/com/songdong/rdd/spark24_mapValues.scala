@@ -13,7 +13,9 @@ object spark24_mapValues {
 
     val mapRDD: RDD[(Int, String)] = listRDD.map(a=>(a._2,a._1))
 
+    //(1,a),(2,b)....
     val mapValuesRDD: RDD[(Int, String)] = mapRDD.mapValues(_+"***")
+
     //(1,a***),(4,a***),(2,b***),(3,c***),(4,d***),(3,a***),(4,b***),(8,c***),(1,c***),(1,d***)
     println(mapValuesRDD.collect().mkString(","))
 
