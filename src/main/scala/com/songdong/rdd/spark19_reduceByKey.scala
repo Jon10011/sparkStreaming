@@ -15,6 +15,7 @@ object spark19_reduceByKey {
     val kvRDD: RDD[(String, Int)] = listRDD.map(a => (a, 1))
 
     //reduceByKey
+    //相比较groupbyKey，reduceByKey多了一步预聚合操作，减少分区，性能提升
     val reduceRDD: RDD[(String, Int)] = kvRDD.reduceByKey(_+_)
 
     //(d,1),(e,1),(a,2),(b,1),(f,2),(c,2)
