@@ -9,14 +9,27 @@ object spark20_aggregateByKey {
     val sc: SparkContext = new SparkContext(conf)
 
     //创建k-vRDD，4个分区
-    val listRDD: RDD[(String, Int)] = sc.makeRDD(List(("a",1),("a",4),("b",2),("c",3),("d",4),("a",3),("b",4),("c",8),("d",1)),2)
+    val listRDD: RDD[(String, Int)] = sc.makeRDD(List(("a",1),("a",4),("b",2),("c",3),("d",4),("a",3),("b",4),("c",8),("c",1),("d",1)),2)
 
     listRDD.glom().collect().foreach(a=>println(a.mkString(",")))
 
     //aggregateByKey
     //求每个分区相同key对应值的最大值，然后相加
+    /**
+      * (d,5),(b,6)
+      * (a,7),(c,11)
+      */
     val res: RDD[(String, Int)] = listRDD.aggregateByKey(0)(math.max(_,_),_+_)
     res.glom().collect().foreach(a=>println(a.mkString(",")))
+
+    //求wordCount
+    /**
+      * (d,5),(b,6)
+      * (a,8),(c,12)
+      */
+
+    val res1: RDD[(String, Int)] = listRDD.aggregateByKey(0)(_+_,_+_)
+    res1.glom().collect().foreach(a=>println(a.mkString(",")))
 
 
     sc.stop()
