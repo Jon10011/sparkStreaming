@@ -15,7 +15,7 @@ object spark25_join {
 
     val result: RDD[(Int, (String, String))] = listRDD01.join(listRDD02)
 
-
+    //(4,(d,c)),(2,(b,a)),(3,(c,b))
     println(result.collect().mkString(","))
 
     sc.stop()
