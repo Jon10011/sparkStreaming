@@ -10,7 +10,7 @@ object spark16_zip {
 
     //创建RDD，4个分区
     val listRDD01: RDD[Int] = sc.makeRDD(1 to 5, 4)
-    val listRDD02: RDD[Int] = sc.makeRDD(5 to 10, 4)
+    val listRDD02: RDD[Int] = sc.makeRDD(5 to 9, 4)
 
     //zip
     val zipRDD: RDD[(Int, Int)] = listRDD01.zip(listRDD02)
